@@ -219,6 +219,25 @@
                 <div>
                     <p class="text-[24px] font-[600] text-[#030712]">Select Your Seat</p>
                     <hr>
+                    <table>
+                        <tr>
+                            <th class="w-[140px] text-left">Seat <span id="selectedSeatNumber"></span></th>
+                            <th class="w-[140px] text-left">Class</th>
+                            <th class="w-[140px] text-left">Price</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                hhhk
+                            </td>
+                            <td>jhfgj</td>
+                            <td>hjgjhgj</td>
+                        </tr>
+                    </table>
+                    <!-- error -->
+                    <div role="alert" id="error-msg" class="alert alert-error hidden">
+                        <span>Error! Task failed successfully.</span>
+                    </div>
+
                     <div class="my-8">
                         <span class="label-text text-[#030712] font-[600]">Passenger Name*</span>
                         <label class="input input-bordered flex items-center gap-2 my-4 w-[433px] h-[64px]">
@@ -255,36 +274,31 @@
         for (const key of allKeys) {
             count++;
         }
-    
+
 
         const totalSeats = document.getElementById('total-seats-left');
-   
-            totalSeats.append(count);
-       
+
+        totalSeats.append(count);
+
 
 
         for (const key of allKeys) {
             key.addEventListener('click', function () {
-                
+
                 selectedSeat++;
-                if(selectedSeat<=4){
+
+                if (selectedSeat <= 4) {
                     key.style.background = '#1DD100';
-                key.style.color = 'white';
+                    key.style.color = 'white';
                 }
-        
-            })
-            key.addEventListener('dblclick', function () {
-                key.style.background = 'gray';
-                key.style.color = 'black';
-                selectedSeat++;
+                else{
+                    const errormsg=document.getElementById('error-msg');
+                    errormsg.removeAttribute('hidden');
+                }
 
             })
-
-
         }
-        if (selectedSeat > 4) {
-
-        }
+     
 
     </script>
 </body>
