@@ -226,11 +226,10 @@
                             <th class="w-[140px] text-left">Price</th>
                         </tr>
                         <tr>
-                            <td>
-                                hhhk
+                            <td id="seat-1">
                             </td>
-                            <td>jhfgj</td>
-                            <td>hjgjhgj</td>
+                            <td id="class">economy</td>
+                            <td id="price">550</td>
                         </tr>
                     </table>
                     <!-- error -->
@@ -286,10 +285,14 @@
             key.addEventListener('click', function () {
 
                 selectedSeat++;
-
+                let seatname=key.innerText;
+                    let seat1=document.getElementById('seat-1');
+                    seat1.append(seatname);
                 if (selectedSeat <= 4) {
                     key.style.background = '#1DD100';
                     key.style.color = 'white';
+               
+
                 }
                 else{
                     const errormsg=document.getElementById('error-msg');
